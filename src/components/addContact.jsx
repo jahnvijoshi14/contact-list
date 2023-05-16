@@ -25,13 +25,12 @@ function AddContact() {
   const handleSubmit = (event) => {
     if (
       !(
-        data.name.trim &&
-        data.email.trim &&
-        data.phone.trim &&
-        data.username.trim
+        data.name.trim() &&
+        data.email.trim() &&
+        data.phone.trim() &&
+        data.username.trim()
       )
     ) {
-      console.log(data);
       setShow(true);
       return;
     }
