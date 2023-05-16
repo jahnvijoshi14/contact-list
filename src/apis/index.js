@@ -44,7 +44,7 @@ export const updateData = async (user) => {
 //this is just a dummy call to add data
 export const addData = async (user) => {
   let result = { response: "error", data: [] };
-  fetch("https://jsonplaceholder.typicode.com/posts", {
+  await fetch("https://jsonplaceholder.typicode.com/posts", {
     method: "POST",
     body: JSON.stringify({
       user,
