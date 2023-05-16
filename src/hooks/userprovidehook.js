@@ -4,12 +4,12 @@ import { getData, deleteData, updateData, addData } from "../apis/index";
 // this is the custom hook where all the functionalities are written ex:- add , update , delete react state
 export const useProvideUsers = () => {
   const [users, setUsers] = useState([]);
-  console.log(users);
+
   // this will fetch the data from the server
   useEffect(() => {
     const fetchData = async () => {
       const result = await getData();
-      console.log(result);
+
       if (result.response == "success") {
         setUsers(result.data);
       }
@@ -27,13 +27,12 @@ export const useProvideUsers = () => {
     }
     const newUser = [user, ...users];
 
-    //users.push(user);
     setUsers(newUser);
   };
 
   // this function  delete the data from the react state and also a dummy api call is made here
-  const deleteContact = (id) => {
-    deleteData(id);
+  const deleteContact = async (id) => {
+    await deleteData(id);
     const newUsers = users.filter((user) => user.id != id);
     setUsers(newUsers);
   };
