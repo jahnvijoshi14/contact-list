@@ -53,6 +53,7 @@ function AddContact() {
     setFlag("false");
   };
 
+  // if any field is empty then this will return an alert
   if (show) {
     return (
       <>
